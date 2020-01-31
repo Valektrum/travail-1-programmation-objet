@@ -8,6 +8,17 @@ using namespace std;
 const int maxCartesAJouer = 26;
 class Joueur
 {
+private:
+	string nom;
+	int nombreVictoires;
+	int nombreDefaites;
+	Carte* mainDuJoueur[26];
+public:
+	Joueur();
 
+	void setNom(string);
+	void AjouterCarteMain(Carte*);
+	void ViderMain();
+		
 };
 #endif

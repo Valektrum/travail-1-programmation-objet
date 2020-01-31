@@ -6,7 +6,11 @@ const int maxCartes = 52;
 
 class Donnees
 {
-	public:
+public:
+
+	Carte lePaquet[52];
+	Joueur joueur1;
+	Joueur joueur2;
 
 };
 
