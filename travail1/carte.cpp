@@ -7,6 +7,7 @@ Carte::Carte()
 }
 void Carte::InitialiserCarte(int inValeur, string inAtout)
 {
+//eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 	valeur = inValeur;
 	atout = inAtout;
 }
