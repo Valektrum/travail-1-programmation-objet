@@ -12,5 +12,6 @@ public:
 	Joueur joueur1;
 	Joueur joueur2;
 
+	void CreerLes52Cartes(Carte[]);
 };
 

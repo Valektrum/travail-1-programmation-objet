@@ -12,6 +12,7 @@ private:
 	string nom;
 	int nombreVictoires;
 	int nombreDefaites;
+	int nombreDeCarte;
 	Carte* mainDuJoueur[26];
 public:
 	Joueur();
