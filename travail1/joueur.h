@@ -17,6 +17,7 @@ private:
 public:
 	Joueur();
 
+
 	void setNom(string);
 	void AjouterCarteMain(Carte*);
 	void ViderMain();
