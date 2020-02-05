@@ -27,9 +27,51 @@ int main()
 
 void Jouer() 
 {
+	int nombreDeCarte = combienDeCarte();
+	melanger();
+}
 
+void melanger()
+{
+	int nb1, nb2;
+	Carte carteTemp, carte1;
+
+	for (int i = 0; i < 1001; i++)
+	{
+		nb1 = rand() % 52;
+		nb2 = rand() % 52;
+		carteTemp = leJeu.lePaquet[nb1];
+		leJeu.lePaquet[nb1] = carte1;
+		leJeu.lePaquet[nb2] = carteTemp;
+	}
+}
+
+int combienDeCarte()
+{
+	int nbCarte = 27;
+	cout << "Combiens de carte voulez vous dans votre main?" << endl;
+	while (nbCarte > 26)
+	{
+		cin >> nbCarte;
+		if (nbCarte > 26) {
+			cout << "Veuillez choisir un nombre plus petit ou egal à 26" << endl;
+		}
+	}
+	return nbCarte;
 }
 
 void InitialiserJoueurs()
 {
+	
+	string nom;
+	cout << "Veuillez entrer le nom du joueur #1" << endl;
+	cin >> nom;
+	leJeu.joueur1.setNom(nom);
+
+	nom = "";
+
+	cout << "Veuillez entrer le nom du joueur #2" << endl;
+	cin >> nom;
+	leJeu.joueur2.setNom(nom);
+
 }
