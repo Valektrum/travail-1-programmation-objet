@@ -21,6 +21,13 @@ public:
 	void setNom(string);
 	void AjouterCarteMain(Carte*);
 	void ViderMain();
-		
+	void Afficher(int, int);
+	int total();
+	string getNom();
+	int getVictoire();
+	int getDefaite();
+	void JoueurAGagne();
+	void JoueurAPerdu();
+	void AfficherStats(int, int);
 };
 #endif

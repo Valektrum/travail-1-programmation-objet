@@ -18,17 +18,15 @@ void Donnees::CreerLes52Cartes(Carte aLePaquet[])
 		}
 		else if (i == 2)
 		{
-			atout = "trèfle";
+			atout = "trefle";
 		}
-		else
+		else if(i==3)
 		{
 			atout = "carreau";
 		}
-		for (int j = 0; j < 13; j++)
+		for (int j = 1; j < 14; j++)
 		{
-			Carte nouvelleCarte;
-			nouvelleCarte.InitialiserCarte(j, atout);
-			aLePaquet[nbCarte];
+			aLePaquet[nbCarte].InitialiserCarte(j, atout);
 			nbCarte++;
 		}
 	}

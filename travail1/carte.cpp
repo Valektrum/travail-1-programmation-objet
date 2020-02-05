@@ -23,5 +23,5 @@ string Carte::GetAtout() const
 void Carte::Afficher(int inX, int inY) const
 {
 	Gotoxy(inX, inY);
-	cout << valeur << " " << atout;
+	cout << valeur << "\t" << atout;
 }
