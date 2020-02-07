@@ -2,11 +2,12 @@
 
 Donnees::Donnees()
 {
+	
 	CreerLes52Cartes(lePaquet);
 	
 }
 
-void Donnees::CreerLes52Cartes(Carte aLePaquet[])
+void Donnees::CreerLes52Cartes(Carte inLePaquet[])
 {
 	string atout = "pique";
 	int nbCarte = 0;
@@ -26,7 +27,7 @@ void Donnees::CreerLes52Cartes(Carte aLePaquet[])
 		}
 		for (int j = 1; j < 14; j++)
 		{
-			aLePaquet[nbCarte].InitialiserCarte(j, atout);
+			inLePaquet[nbCarte].InitialiserCarte(j, atout);
 			nbCarte++;
 		}
 	}

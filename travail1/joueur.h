@@ -17,7 +17,6 @@ private:
 public:
 	Joueur();
 
-
 	void setNom(string);
 	void AjouterCarteMain(Carte*);
 	void ViderMain();
@@ -26,8 +25,8 @@ public:
 	string getNom();
 	int getVictoire();
 	int getDefaite();
-	void JoueurAGagne();
-	void JoueurAPerdu();
+	void AGagne();
+	void APerdu();
 	void AfficherStats(int, int);
 };
 #endif

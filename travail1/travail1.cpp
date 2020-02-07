@@ -13,7 +13,7 @@ void InitialiserJoueurs();
 void Jouer();
 void melanger();
 int combienDeCarte();
-void distribuer(int aNombreDeCarte);
+void distribuer(int inNombreDeCarte);
 void afficher();
 void AfficherGagnantTour();
 void AfficherGagnantJeu();
@@ -45,7 +45,6 @@ void Jouer()
 
 	AfficherGagnantTour();
 
-	
 	leJeu.joueur1.ViderMain();
 	leJeu.joueur2.ViderMain();
 
@@ -57,14 +56,18 @@ void AfficherGagnantTour()
 	if (leJeu.joueur1.total() > leJeu.joueur2.total())
 	{
 		gagnant = leJeu.joueur1.getNom();
-		leJeu.joueur1.JoueurAGagne();
-		leJeu.joueur2.JoueurAPerdu();
+		leJeu.joueur1.AGagne();
+		leJeu.joueur2.APerdu();
+	}
+	else if(leJeu.joueur1.total() < leJeu.joueur2.total())
+	{
+		gagnant = leJeu.joueur2.getNom();
+		leJeu.joueur2.AGagne();
+		leJeu.joueur1.APerdu();
 	}
 	else
 	{
-		gagnant = leJeu.joueur2.getNom();
-		leJeu.joueur2.JoueurAGagne();
-		leJeu.joueur1.JoueurAPerdu();
+		gagnant = "Personne";
 	}
 	cout << gagnant << " a gagne le tour";
 
@@ -112,36 +115,36 @@ void afficher()
 	leJeu.joueur2.Afficher(x + 25, y);
 }
 
-void distribuer(int aNombreDeCarte)
+void distribuer(int inNombreDeCarte)
 {
-	for (int i = 0; i < aNombreDeCarte; i ++)
+	for (int i = 0; i < inNombreDeCarte; i ++)
 	{
 		leJeu.joueur1.AjouterCarteMain(&leJeu.lePaquet[i]);
 	}
-	for (int i = 0; i < aNombreDeCarte; i ++)
+	for (int i = 0; i < inNombreDeCarte; i ++)
 	{
-		leJeu.joueur2.AjouterCarteMain(&leJeu.lePaquet[aNombreDeCarte + i]);
+		leJeu.joueur2.AjouterCarteMain(&leJeu.lePaquet[inNombreDeCarte + i]);
 	}
 }
 
 void melanger()
 {
-	int nb1, nb2;
+	int emplacement1, emplacement2;
 	Carte carteTemp;
 
 	for (int i = 0; i < 1001; i++)
 	{
-		nb1 = rand() % 52;
-		nb2 = rand() % 52;
-		carteTemp = leJeu.lePaquet[nb1];
-		leJeu.lePaquet[nb1] = leJeu.lePaquet[nb2];
-		leJeu.lePaquet[nb2] = carteTemp;
+		emplacement1 = rand() % 52;
+		emplacement2 = rand() % 52;
+		carteTemp = leJeu.lePaquet[emplacement1];
+		leJeu.lePaquet[emplacement1] = leJeu.lePaquet[emplacement2];
+		leJeu.lePaquet[emplacement2] = carteTemp;
 	}
 }
 
 int combienDeCarte()
 {
-	int nbCarte = 27;
+	int nbCarte = 0;
 	cout << "Combiens de carte voulez-vous dans votre main?" << endl;
 	while (nbCarte > 26 || nbCarte <=0)
 	{

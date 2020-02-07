@@ -9,14 +9,14 @@ Joueur::Joueur()
 	*mainDuJoueur = {};
 }
 
-void Joueur::setNom(string aNom)
+void Joueur::setNom(string inNom)
 {
-	nom = aNom;
+	nom = inNom;
 }
 
-void Joueur::AjouterCarteMain(Carte* aCarte)
+void Joueur::AjouterCarteMain(Carte* inCarte)
 {
-	mainDuJoueur[nombreDeCarte] = aCarte;
+	mainDuJoueur[nombreDeCarte] = inCarte;
 	nombreDeCarte++;
 }
 
@@ -82,11 +82,11 @@ int Joueur::getDefaite()
 	return nombreDefaites;
 }
 
-void Joueur::JoueurAGagne()
+void Joueur::AGagne()
 {
 	nombreVictoires++;
 }
-void Joueur::JoueurAPerdu()
+void Joueur::APerdu()
 {
 	nombreDefaites++;
 }
